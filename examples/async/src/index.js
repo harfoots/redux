@@ -1,5 +1,6 @@
+migrations/test/harfoots/redux/examples/async/src/index.js
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunk from 'redux-thunk'
@@ -17,9 +18,10 @@ const store = createStore(
   applyMiddleware(...middleware)
 )
 
-render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 )
