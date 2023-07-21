@@ -1,14 +1,15 @@
 import React from 'react'
-import { render } from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { BrowserRouter as Router } from 'react-router-dom'
 import Root from './containers/Root'
 import configureStore from './store/configureStore'
 
 const store = configureStore()
 
-render(
+const container = document.getElementById('root');
+const root = createRoot(container);
+root.render(
   <Router>
     <Root store={store} />
-  </Router>,
-  document.getElementById('root')
+  </Router>
 )
