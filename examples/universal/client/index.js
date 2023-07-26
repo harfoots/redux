@@ -8,7 +8,7 @@ import App from '../common/containers/App'
 const store = configureStore(window.__PRELOADED_STATE__)
 delete window.__PRELOADED_STATE__
 const container = document.getElementById('app')
-const root = createRoot(container)
+const root = createRoot(container);
 
 root.render(
   <Provider store={store}>
